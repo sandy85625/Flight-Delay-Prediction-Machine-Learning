@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Delay Prediction</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet" type="text/html">
+    <link href="https://fonts.googleapis.com/css?family=Armio" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/vendors/bootstrap.min.css')}}">
+</head>
+<body>
+<div class="login">
+    <h1>Flight Delay Prediction</h1>
+    <form action="{{ url_for('predict')}}" method="post">
+        <div class="center">
+        <input class="form-control" type="text"  name="Flight Number" placeholder="Flight Number" required="required">
+        </div>
+        <div class="center">
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Delay Time</button>
+        </div>
+    </form>
+    <br>
+    <div align="center"  >
+       <h4>
+           <font color="white">{{prediction_text}}</font>
+       </h4>
+    </div>
+</div>
+</body>
+</html>
